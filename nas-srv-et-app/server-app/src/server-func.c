@@ -13,7 +13,7 @@ int readConfigFile(config_t *cfg) {
 
 	if (!config_read_file(cfg, "/home/keinsword/workspace/nas-srv-et/nas-srv-et-app/server-app/server-config.cfg")) {
 		config_destroy(cfg);
-		return CONFIG_ERR;
+		return CONFIG_READ_ERR;
 	}
 
 	setting = config_lookup(cfg, "application.services.serviceNamesList");
@@ -44,7 +44,7 @@ int readConfigFile(config_t *cfg) {
 			if(config_lookup_int(cfg, "application.connectSocket.qlen", &servConfig.qlen))
 				return 0;
 
-	return CONFIG_ERR;
+	return CONFIG_READ_ERR;
 }
 
 int checkArgs() {

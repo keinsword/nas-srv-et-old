@@ -55,8 +55,6 @@ int main(int argc, char *argv[]) {
 
 		memset(&connList, 0, sizeof(connList));
 
-		errTableInit();
-
 		config_init(&cfg);
 
 		result = readConfigFile(&cfg);
