@@ -17,6 +17,8 @@ int main(int argc, char *argv[]) {
 	strcpy(conn.protoName, PROTO_NAME);
 	strcpy(conn.protoVersion, PROTO_VER);
 
+	errTableInit();
+
     if (argc == 4) {
   		result = checkArgs(argv);
 		if(result < 0)

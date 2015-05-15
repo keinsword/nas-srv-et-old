@@ -35,7 +35,8 @@
 #define NO_MORE_PLACE -19
 #define SRV_IS_OFFLINE -20
 #define CONNECT_ERR -21
-#define WRONG_SRV_IP_REQ -23
+#define WRONG_SRV_NAME_REQ -23
+#define WRONG_SRV_IP_REQ -24
 
 //codes of the non-error return values
 #define READ_AGAIN 1

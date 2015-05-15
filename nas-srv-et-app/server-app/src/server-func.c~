@@ -319,7 +319,7 @@ int dataExchangeWithClient(int serverSock, connection *connList, struct epoll_ev
 
 	deSerializer(&connList[n], buffer);
 
-	result = serverChecksumCalculateAndCompare(&connList[n], buffer);
+	result = serverChecksumCalculateAndCompare(&connList[n], buffer); //!!!!!!!!!!!
 	if (result == 0) {
 		connList[n].timeout = time(NULL);
 		result = sendMessage(serverSock, &connList[n], buffer);
