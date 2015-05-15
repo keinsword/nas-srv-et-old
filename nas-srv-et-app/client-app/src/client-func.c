@@ -159,14 +159,18 @@ int recvMessageFromServer(int sockFD, connection *conn) {
 		if(strncmp(buffer, NO_MORE_PLACE_NOTIF, strlen(NO_MORE_PLACE_NOTIF)) == 0)
 			return NO_MORE_PLACE;
 
-		if(strcmp(WRONG_SRV_NOTIF, buffer) == 0)
+		if(strcmp(WRONG_SRV_NOTIF, buffer) == 0) {
+			printf("%s\n", WRONG_SRV_NOTIF);
 			return WRONG_SRV_REQ;
+		}
 
 		if(strcmp(SRV_IS_OFFLINE_NOTIF, buffer) == 0)
 			return SRV_IS_OFFLINE;
 
-		if(strcmp(WRONG_SRV_IP_NOTIF, buffer) == 0)
+		if(strcmp(WRONG_SRV_IP_NOTIF, buffer) == 0) {
+			printf("%s\n", WRONG_SRV_IP_NOTIF);
 			return WRONG_SRV_IP_REQ;
+		}
 
 		deSerializer(conn, buffer);
 		printf("Server: %s\n\n", conn->messageText);
